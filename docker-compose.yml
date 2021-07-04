@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+    scp:
+        image: nginx:1.21.0-alpine
+        volumes:
+            - ./scp/nginx.conf:/etc/nginx/nginx.conf
+            - ./webapp/:/usr/share/nginx/html/
+        ports:
+            - "80:92"
+        restart: always
